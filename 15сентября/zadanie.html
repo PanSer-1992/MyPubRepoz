@@ -1,0 +1,76 @@
+<doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заказ шаурмы.</title>
+</head>
+
+<body>
+<img src="shaur.png" width="200"><br>
+<h2>Заказ шаурмы на дом</h2>
+<form action="" method="GET">
+    <input type="text" name="textfield" placeholder="ФИО заказчика">
+    <fieldset style="width:600px">
+    <legend>Лаваши</legend>
+        <select name="лаваш">
+            <option disabled selected>Виды лаваша</option>
+            <option value="prostoe">простой</option>
+            <option value="jeltii">жёлтый</option>
+            <option value="cirnii">Сырный</option>
+        </select>
+    </fieldset>   
+    <fieldset style="width:600px">
+    <legend>Наполнение</legend>
+        <select name="мясо">
+            <option disabled selected>Мясо</option>
+            <option value="kurica">курица</option>
+            <option value="svinina">свинина</option>
+            <option value="teliatina">телятина</option>
+            <option value="rotted">испорченное</option>
+        </select>
+        <br><br>
+    <legend>Дополнительно:</legend>
+       
+           	
+            <input type="checkbox" name="checkbox1" value="luk"> <img src="luk.png" width="15">
+            лук <br>
+            <input type="checkbox" name="checkbox2" value="salat"> <img src="salat.png" width="15">
+            салат   <br>
+            <input type="checkbox" name="checkbox3" value="morkov"> <img src="mork.png" width="15">
+            морковь <br>
+            <input type="checkbox" name="checkbox4" value="kartoshka"> <img src="kart.png" width="15">
+            картошка     <br>
+            <input type="checkbox" name="checkbox5" value="sir"> <img src="sir.png" width="15">
+            сыр
+            <br><br>
+    <legend>Соусы</legend>
+        <select name="соусы" multiple>
+            <option disabled selected>Соусы</option>
+            <option value="maionez">майонез</option>
+            <option value="gorchica">горчица</option>
+            <option value="ketchup">кетчуп</option>
+            <option value="gribnoi">грибной</option>
+        </select>
+    </fieldset> 
+        <br>
+    <fieldset style="width:600px">
+    <p><b>Способ оплаты:</b><Br>
+   <input type="radio" name="oplata" value="nal"><img src="dengi.png" width="15"> Наличными<Br>
+   <input type="radio" name="oplata" value="karta"><img src="karta.png" width="15"> Банковской картой<Br>
+  </p>
+    </fieldset>   
+    <br>
+    <fieldset style="width:600px">
+    <legend>Дополнительные пожелания:</legend>
+    <textarea name="area" cols="10" rows="10"></textarea>
+    </fieldset>
+    <br>
+    <img src="telef.png" width="20">
+    <input type="tel" name="tel" placeholder="номер телефона"><br><br>
+    <button type="submit">отправить</button>
+    <button type="reset">очистить</button>
+    <button type="button" onclick="alert('Ваш заказ принят.Ждите, по указанному номеру с Вами свяжется менеджер для уточнения заказа. Спасибо.')">уведомление</button>
+</form>
+</body>
+
+</html>
