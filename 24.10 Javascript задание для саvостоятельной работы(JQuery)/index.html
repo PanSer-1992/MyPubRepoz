@@ -1,0 +1,81 @@
+<!DOCTYME html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+<style>
+    body {
+    font-family:verdana;
+    font-size:15px;
+    background: #FFDAB9;
+    }  
+a {color:#333; text-decoration:none}
+    a:hover {color:#ccc; text-decoration:none}  
+#mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#FF7F50;
+    display:none;
+    }
+    .uliq {
+    margin: 50px;
+    font-size: 20px;
+    }
+    .close {
+    margin-left: 20px;
+    color: red;
+    }
+    #boxes .window {
+    position:absolute;
+    left:0;
+    top:0;
+    width:440px;
+    height:200px;
+    display:none;
+    z-index:9999;
+    padding:20px;
+    }  
+#boxes #dialog {
+    width:375px; 
+    height:203px;
+    padding:10px;
+    background-color:#ffffff;
+    }  
+
+#boxes #dialog2 {
+    background:url(./bumaga.png) no-repeat 0 0 transparent;
+    background-size: contain;
+    width:326px; 
+    height:229px;
+    padding:50px 0 20px 25px;
+    }
+  </style>
+</head>
+<body>
+    <div class="uliq">
+        <ul>
+            <li><a href="#dialog" name="modal">Модальное окно</a></li>
+            <li><a href="#dialog2" name="modal">Окно с картинкой</a></li>
+        </ul>
+    </div>
+    <div id="boxes">  
+        <div id="dialog" class="window"> 
+            Модальное окно Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. | 
+            <a href="#"class="close">Закрыть</a>
+        </div>
+        
+        <!-- Начало стикера -->
+        <div id="dialog2" class="window">
+        Текст на картинке. <b>Жирный текст</b> Lorem ipsum <i>dolor sit amet</i>, consectetuer adipiscing elit.<br><br>
+        <input type="button" value="Закрыть!" class="close"/><div></div>
+    </div>
+        <!-- конец -->  
+       
+        <!-- Маска, которая затемняет весь экран -->
+      <div id="mask"></div>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
