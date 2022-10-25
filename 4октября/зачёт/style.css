@@ -22,7 +22,7 @@ html {
 body {
     font: 100 normal 20px/30px 'Roboto';
     background: #f7f7f7;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +35,7 @@ h1 {
     font-size: 40px;
     line-height: 50px;
     font-weight: 300;
-    margin: 50px 0 75px;
+    margin: 40px 0 40px;
     text-align: center;
 }
 p {
@@ -101,7 +101,7 @@ main img {
 }
 .content {
     width: 1200px;
-    margin: 0 auto 100px;
+    margin: 0 auto 56px;
     overflow: hidden;
 }
 .box {
@@ -109,7 +109,7 @@ main img {
     margin: 0 10px 0 420px;
     padding: 50px;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 25px;
     text-align: left;
     color: #242424;
     font-family: 'Comfortaa';
@@ -117,7 +117,7 @@ main img {
     font-style: normal;
 }
 .box p {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 .box a {
     color: #40678a;
