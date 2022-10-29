@@ -1,0 +1,134 @@
+<!DOCTYME html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        #vvod, #btn2, #pole, #zadacha, #malo, #mnogo, #verno, #Nechislo {
+            display: none;
+        }
+        div {
+            background-color: #a0fd90;
+            width: 600px;
+            heigth: 700px;
+            position: relative;
+            border-radius: 65px;
+            margin: auto;
+            padding: 40px;
+        }
+        #malo, #mnogo, #zadacha,#pole, #vvod, h1, p {
+            text-align: center;
+        }
+        button {
+            margin-left: 250px;;
+        }
+        #zadacha {
+            width: 100%;
+        }
+        #vvod {
+            margin-left: 210px;
+        }
+        #btn2 {
+            margin-top: 30px;
+            margin-left: 280px;
+        }
+        p {
+            font-size: 24px
+        }
+        #malo, #mnogo {
+            width: 100%;
+            color: #fd0d21;
+            font-size: 20px
+        }
+        #pole {
+            width: 100%;
+        }
+        #Nechislo {
+            width: 100%;
+            color: red;
+            background-color: #f9dd30;
+            letter-spacing: 0.4;
+            line-height: 32px;
+        }
+        </style>
+    </style>
+</head>
+
+    <body>
+        <div>
+            <h1>Игра "Угадай число"</h1>
+            <p id="start">Для начала игры нажмите кнопку</p>
+            <button type="button" id="btn1">начать игру</button>
+            
+            <p id="zadacha">Введите число от 1 до 100</p>
+            <p id="verno">Успех! Вы угадали</p>
+            <input type="text" id="vvod">
+            <button type="button" id="btn2">OK</button>
+            <p id="malo">Мало, надо больше</p>
+            <p id="mnogo">Перебор, надо меньше</p>
+            <p id="Nechislo">Внимательнее. Для решения нужно использовать число!</p>
+            <p id="pole"></p>
+        </div>
+    <script>
+        let counter = 0;
+        let summ;
+        let num;
+        document.getElementById('btn1').onclick = function(){
+            summ = Math.floor(Math.random() * 100 +1);
+            document.getElementById('btn1').style.display = "none";
+            document.getElementById('btn2').style.display = "inline-block";
+            document.getElementById('vvod').style.display = "inline-block";
+            document.getElementById('zadacha').style.display = "inline-block";
+            document.getElementById('start').style.display = "none";
+            document.getElementById('pole').style.display = "block";
+            counter = 0;
+            document.getElementById('pole').innerHTML = "Количество попыток: " + counter;
+        }
+        
+        document.getElementById('btn2').onclick = function () {
+            let num = document.getElementById('vvod').value;
+            num = +num;
+            counter++;
+            if (isNaN(num)){
+                <!-- alert ('Для решения нужно использовать число'); -->
+                document.getElementById('Nechislo').style.display = "inline-block";
+            } else {
+                document.getElementById('Nechislo').style.display = "none";
+            }
+            if (num == summ) {
+                
+                document.getElementById('vvod').value = "";
+                document.getElementById('btn1').style.display = "inline-block";
+                document.getElementById('btn2').style.display = "none";
+                document.getElementById('vvod').style.display = "none";
+                document.getElementById('Nechislo').style.display = "none";
+                document.getElementById('malo').style.display = "none";
+                document.getElementById('mnogo').style.display = "none";
+                document.getElementById('zadacha').style.display = "none";
+                document.getElementById('pole').style.display = "inline-block";
+                document.getElementById('pole').innerHTML = "Вы угадали число с " + counter + " попыток. Сыграем еще раз?";
+                
+            } else if (num > summ){
+                document.getElementById('mnogo').style.display = "inline-block";
+                document.getElementById('malo').style.display = "none";
+                document.getElementById('pole').innerHTML = "Количество попыток: " + counter;
+                
+            } else {
+                document.getElementById('mnogo').style.display = "none";
+                document.getElementById('malo').style.display = "inline-block";
+                document.getElementById('pole').innerHTML = "Количество попыток: " + counter;
+            }
+            if (counter>=11) {
+                document.getElementById('btn1').style.display = "inline-block";
+                document.getElementById('btn2').style.display = "none";
+                document.getElementById('vvod').style.display = "none";
+                document.getElementById('pole').style.display = "none";
+                document.getElementById('pole').innerHTML = "";
+                alert ('Вы не справились за 10 попыток, попробуйте ещё раз.');
+            }
+        }
+    </script>
+    
+    </body>
+    
+</html>
